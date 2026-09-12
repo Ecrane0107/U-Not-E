@@ -213,6 +213,21 @@ h1{
    trackable muscle, so no cursor/hover/click */
 .muscle-filler{fill:var(--muscle-off);stroke:var(--muscle-outline);stroke-width:7;stroke-linejoin:round}
 
+.map-legend{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:14px;
+  margin-top:10px;
+  font-size:11px;
+  color:var(--ink-dim);
+}
+.map-legend span{display:inline-flex;align-items:center;gap:5px}
+.map-legend .dot{width:8px;height:8px;border-radius:50%;flex:0 0 auto}
+.map-legend .dot.is-primary{background:var(--muscle-primary)}
+.map-legend .dot.is-secondary{background:var(--muscle-secondary)}
+.map-legend .dot.is-filtered{background:var(--muscle-filtered)}
+
 .map-filter-row{
   display:flex;
   align-items:center;
@@ -492,7 +507,7 @@ input[type="number"]::-webkit-inner-spin-button{-webkit-appearance:none;margin:0
 }
 
 @media (max-width:560px){
-  .page{padding:32px 20px 48px} /* top bumped from 24px to clear the 24px "In progress" banner */
+  .page{padding:24px 20px 48px}
   h1{font-size:26px}
   .workout-entry,.entry-head-row{grid-template-columns:1fr 44px 44px 54px 24px}
 }
