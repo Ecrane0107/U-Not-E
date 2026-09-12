@@ -175,6 +175,7 @@
 
 </div>
 
+<script src="assets/wip-banner.js?v=1"></script>
 <script src="assets/spiral-bg.js?v=8"></script>
 <script type="module">
   import { initAuthWidget } from "./assets/auth-widget.js?v=2";
@@ -187,7 +188,11 @@
   // pieces render and whether their color theme is random each visit
   // or pinned to a chosen hue.
   // ---------------------------------------------------------------
-  const SETTINGS_KEY = "note-display-settings:v1";
+  // a distinct key from Not-e's -- both sites share the ecrane0107.github.io
+  // origin, so github.io/Not-e and github.io/U-Not-E would otherwise read
+  // and write the exact same localStorage entry and bleed settings into
+  // each other
+  const SETTINGS_KEY = "unote-display-settings:v1";
   const DEFAULT_SETTINGS = { hue: null, rods: true, lights: true, flakes: false, mist: false };
 
   function loadSettings() {

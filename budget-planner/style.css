@@ -352,7 +352,7 @@ h1{
 .export-label{font-size:12px;color:var(--ink-dim);margin-right:2px}
 
 @media (max-width:720px){
-  .page{padding:24px 20px 48px}
+  .page{padding:32px 20px 48px} /* top bumped from 24px to clear the 24px "In progress" banner */
   h1{font-size:28px}
   .grid{grid-template-columns:1fr}
   .summary-grid{grid-template-columns:1fr 1fr}
@@ -401,7 +401,7 @@ h1{
    overflows the panel instead of shrinking, and .panel's overflow:
    hidden clips it. Shrink the figures and stack the money table. */
 @media (max-width:400px){
-  .page{padding:20px 16px 40px}
+  .page{padding:32px 16px 40px} /* top bumped from 20px to clear the 24px "In progress" banner */
   .panel-head,.rows,.panel-foot{padding-left:14px;padding-right:14px}
   .rows-head{padding-left:14px;padding-right:14px}
   .summary-grid{grid-template-columns:1fr 1fr}

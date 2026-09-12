@@ -23,7 +23,12 @@
     overflow:hidden;
   }
 
-  .shell{display:flex;height:100vh;height:100dvh}
+  /* body is overflow:hidden (the app fits the viewport exactly, panels
+     scroll internally instead) so the fixed "In progress" banners
+     (wip-banner.js, 24px each) would otherwise sit permanently over the
+     rail's topbar and the map's bottom controls with no way to scroll
+     past them -- shrink the shell and push it down to clear both */
+  .shell{display:flex;margin-top:24px;height:calc(100vh - 48px);height:calc(100dvh - 48px)}
 
   /* ---------- left rail ---------- */
   .rail{
@@ -484,7 +489,8 @@
   .read-inner{max-width:660px;margin:0 auto}
   .read-close{
     position:fixed;
-    top:22px;
+    top:46px; /* 22px + the 24px top banner -- .reader is its own fixed
+                 inset:0 overlay, unaffected by .shell's own offset */
     right:26px;
     padding:7px 13px;
     background:var(--panel);

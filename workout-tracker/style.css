@@ -492,7 +492,7 @@ input[type="number"]::-webkit-inner-spin-button{-webkit-appearance:none;margin:0
 }
 
 @media (max-width:560px){
-  .page{padding:24px 20px 48px}
+  .page{padding:32px 20px 48px} /* top bumped from 24px to clear the 24px "In progress" banner */
   h1{font-size:26px}
   .workout-entry,.entry-head-row{grid-template-columns:1fr 44px 44px 54px 24px}
 }

@@ -75,7 +75,7 @@ body{
    little fixed "back to menu" buttons the individual project pages use */
 .topbar{
   position:fixed;
-  top:24px;
+  top:48px; /* 24px + the 24px "In progress" banner pinned above it (see wip-banner.js) */
   left:32px;
   z-index:5;
   display:flex;
@@ -167,7 +167,7 @@ body{
    involved */
 .settings-panel{
   position:fixed;
-  top:66px;
+  top:90px; /* 66px + the 24px top banner, same as .topbar above */
   left:32px;
   z-index:6;
   width:250px;
@@ -264,9 +264,9 @@ body{
 }
 
 @media (max-width:560px){
-  .topbar{top:14px;left:16px}
+  .topbar{top:38px;left:16px} /* 14px + the 24px top banner */
   .auth-name{max-width:70px}
-  .settings-panel{top:56px;left:16px;right:16px;width:auto}
+  .settings-panel{top:80px;left:16px;right:16px;width:auto} /* 56px + the 24px top banner */
 }
 
 header{margin-bottom:56px}
