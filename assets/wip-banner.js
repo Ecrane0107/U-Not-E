@@ -1,15 +1,16 @@
 /*
  * Thin "In progress" banners pinned to the very top and bottom of every
- * page in this repo -- one shared script so the wording/styling only
- * needs updating in one place. Fixed positioning (not normal flow) so
- * it behaves the same on an ordinary scrolling page and on a 100dvh app
- * shell (from-bits-to-models' graph view) -- pages with their own
- * fixed-position chrome near the edges (the topbar, the booklet
- * reader's close button, the graph shell itself) have their offsets
- * bumped in their own stylesheet to clear BANNER_H below.
+ * page in this repo -- one shared script so the wording and styling only
+ * need updating in one place.
+ *
+ * The banners also declare the space they take by setting --chrome-top
+ * and --chrome-bottom. The site bar and every page laid out against it
+ * are written in terms of those, so nothing else has to know these
+ * strips exist -- which is what the per-page offset bumps used to do,
+ * one stylesheet at a time, and kept getting lost.
  */
 (function () {
-  var BANNER_H = 24; // px -- keep in sync with the offset bumps in each page's CSS
+  var BANNER_H = 24; // px -- published to CSS below, so nothing hardcodes it
 
   var style = document.createElement("style");
   style.textContent =
@@ -22,7 +23,8 @@
     "z-index:99999;pointer-events:none;" +
     "}" +
     ".wip-banner.wip-top{top:0}" +
-    ".wip-banner.wip-bottom{bottom:0}";
+    ".wip-banner.wip-bottom{bottom:0}" +
+    ":root{--chrome-top:" + BANNER_H + "px;--chrome-bottom:" + BANNER_H + "px}";
   document.head.appendChild(style);
 
   function makeBanner(cls) {
